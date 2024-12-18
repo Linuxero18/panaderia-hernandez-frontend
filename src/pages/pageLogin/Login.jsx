@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './Login.css';
 
 const Login = () => {
@@ -55,7 +54,7 @@ const Login = () => {
           <h2>Iniciar Sesión</h2>
           {error && <div className="alert alert-danger">{error}</div>}
           <form onSubmit={handleLogin}>
-            <div className="input-group">
+            <div className="input-group-login">
               <input
                 type="text"
                 className="form-control"
@@ -65,7 +64,7 @@ const Login = () => {
                 required
               />
             </div>
-            <div className="input-group">
+            <div className="input-group-login">
               <input
                 type={passwordVisible ? 'text' : 'password'}
                 className="form-control"
@@ -75,7 +74,7 @@ const Login = () => {
                 required
               />
             </div>
-            <button type="submit" className="btn">Iniciar Sesión</button>
+            <button type="submit" className="btn-login">Iniciar Sesión</button>
           </form>
         </div>
       </div>

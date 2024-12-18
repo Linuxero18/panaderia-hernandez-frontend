@@ -26,16 +26,47 @@ const Inicio = () => {
     navigate('/login');
   };
 
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
+
   return (
-    <div className="inicio-container">
-      <div className="inicio-header">
-        <h1>Bienvenido, {(userData && userData.toUpperCase()) || 'Usuario'}</h1>
-        <button className="btn btn-danger" onClick={handleLogout}>
+    <div className="body-inicio">
+      <div className="sidebar-inicio">
+        <h3 className="text-center mb-4">Menú</h3>
+        <ul className="nav flex-column">
+          <li className="nav-item-inicio mb-3">
+            <button className="btn btn-link text-white w-100 text-start" onClick={() => handleNavigation('/clientes')}>
+              Clientes
+            </button>
+          </li>
+          <li className="nav-item-inicio mb-3">
+            <button className="btn btn-link text-white w-100 text-start" onClick={() => handleNavigation('/pedidos')}>
+              Pedidos
+            </button>
+          </li>
+          <li className="nav-item-inicio mb-3">
+            <button className="btn btn-link text-white w-100 text-start" onClick={() => handleNavigation('/productos')}>
+              Productos
+            </button>
+          </li>
+        </ul>
+        <button className="btn btn-danger-inicio mt-4 w-100" onClick={handleLogout}>
           Cerrar Sesión
         </button>
       </div>
-      <div className="inicio-content">
-        
+      <div className="content-inicio flex-grow-1 p-4">
+        <div className="inicio-header mb-4">
+          <h1 className="mb-0">Bienvenido, {(userData && userData.toUpperCase()) || 'Usuario'}</h1>
+          <p className="text-secondary">Es hora de chambear!</p>
+        </div>
+        <div className="inicio-content-inicio bg-light p-5 rounded shadow">
+          <h2>Panel de Control</h2>
+          <p>Aquí puedes gestionar usuarios, clientes, productos, insumos y más.</p>
+        </div>
+        <div>
+          <img className='imagen-inicio' src='/src/assets/img.inicio.jpeg' alt="Imagen de inicio"/>
+        </div>
       </div>
     </div>
   );
